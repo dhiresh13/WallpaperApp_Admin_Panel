@@ -1,8 +1,8 @@
-<h2>Images</h2>
+<h2>Add notes</h2>
 <hr/>
 <div class="row">
     <div class="col-lg-3">
-   <h4>Add a Wallapaper</h4>
+   <h4>Add notes</h4>
 <form id="image-form">
 
 <div class="form-group">
@@ -36,7 +36,7 @@
         <input type="file" class="form-control" id="wallpaper" />
 
         <div class="invalid-feedback">
-            Please choose a valid image
+            Please choose a valid file
         </div>
     </div>
     
@@ -46,7 +46,7 @@
             </div>
 
     <div class="form-group">
-        <button type="button" id="btn-save" class="btn btn-primary">Save Wallpaper</button>
+        <button type="button" id="btn-save" class="btn btn-primary">Save</button>
     </div>
 </form>
 
@@ -76,7 +76,7 @@
                 $("#category").append("<option value='"+category.key+"'>"+category.key+"</option>");     
             });
         });
-        var validImageTypes = ["image/gif", "image/jpeg", "image/png"];
+        var validImageTypes =["image/jpeg","image/jpg","image/png","application/pdf","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
         $("#btn-save").click(function(){
             $("#title").removeClass("is-invalid");
             $("#desc").removeClass("is-invalid");
@@ -132,7 +132,7 @@
             };
         
             database.child(imageid).set(image,function(err){
-                    alert("Image Saved");
+                    alert("Data Saved");
                     resetform();
             });
             });
